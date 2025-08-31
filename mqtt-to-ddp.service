@@ -1,0 +1,12 @@
+[Unit]
+Description=MQTT to DDP Bridge Service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /path/to/your/project/venv/bin/python /path/to/your/project/mqtt_to_ddp.py
+WorkingDirectory=/path/to/your/project
+Restart=always
+User=your_username
+
+[Install]
+WantedBy=multi-user.target

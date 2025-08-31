@@ -5,11 +5,12 @@ user = your_mqtt_username
 password = your_mqtt_password
 base_topic = homeassistant
 
-[ddp]
-device_ip = 192.168.1.100
+[light_living_room]
+device_ip = 192.168.1.101
 device_port = 4048
-
-[light]
-name = My DDP Light
-unique_id = my_ddp_light_001
 pixel_count = 100
+
+[light_kitchen]
+device_ip = 192.168.1.102
+device_port = 4048
+pixel_count = 50
