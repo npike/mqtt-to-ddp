@@ -122,8 +122,10 @@ def on_message(client, userdata, msg):
         current_light['state'] = payload.get('state', 'OFF')
 
         if current_light['state'] == 'ON':
-            current_light['color'] = payload.get('color', {'r': 255, 'g': 255, 'b': 255})
-            current_light['brightness'] = payload.get('brightness', 255)
+            if 'brightness' in payload:
+                current_light['brightness'] = payload['brightness']
+            if 'color' in payload:
+                current_light['color'] = payload['color']
 
             # Send a packet immediately
             r = current_light['color']['r']
